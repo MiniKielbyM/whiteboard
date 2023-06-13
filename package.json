@@ -4,7 +4,9 @@
   "description": "a",
   "main": "index.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon",
+    "debug": "DEBUG=* nodemon"
   },
   "author": "me",
   "license": "ISC",

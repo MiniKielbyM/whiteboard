@@ -40,17 +40,9 @@ io.on('connection', function (client) {
     console.log(data);
   });
   client.on('messages', function (data) {
-    var splitData = data.split('<br')
-    var x = splitData.length - 2;
-    var y = splitData[x]
-    if (y.indexOf(">") > ! -1 || y.indexOf("<") > ! -1 || splitData.length > 2) {
-      console.log("err: blocked message")
-    }
-    else {
         client.emit('broad', data);
         client.broadcast.emit('broad', data);
-    }
-  });
+   });
   client.on('functions', function (data) {
     client.emit('functions', data);
     client.broadcast.emit('functions', data);
@@ -64,5 +56,5 @@ io.on('connection', function (client) {
 });
 
 
-server.listen(6942);
+server.listen(5500);
 
